@@ -2,6 +2,10 @@
 	"name": "nrg-web-landing",
 	"private": true,
 	"version": "0.0.1",
+	"author": {
+		"name": "Jay",
+		"url": "https://github.com/jaydev0220"
+	},
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
