@@ -6,6 +6,7 @@
 		"name": "Jay",
 		"url": "https://github.com/jaydev0220"
 	},
+	"license": "CC-BY-NC-ND-4.0",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
