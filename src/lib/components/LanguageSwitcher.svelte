@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ChevronDown } from '@lucide/svelte';
 	import { getLocale, setLocale } from '$lib/paraglide/runtime';
 	import * as m from '$lib/paraglide/messages';
 
@@ -39,15 +40,10 @@
 		<span class="truncate text-text-body">
 			{getLocale() === 'zh-tw' ? '繁中' : 'EN'}
 		</span>
-		<svg
+		<ChevronDown
 			class="h-3 w-3 text-text-muted transition-transform duration-200 {isOpen ? 'rotate-180' : ''}"
-			fill="none"
-			stroke="currentColor"
-			viewBox="0 0 24 24"
 			aria-hidden="true"
-		>
-			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-		</svg>
+		/>
 	</button>
 
 	{#if isOpen}
