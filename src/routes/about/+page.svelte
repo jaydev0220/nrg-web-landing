@@ -6,16 +6,13 @@
 </script>
 
 <svelte:head>
-	<title>{m.about_page_title()} | {m.company_name()}</title>
-	<meta name="description" content={m.story_content().substring(0, 160)} />
-	<meta property="og:title" content={`${m.about_page_title()} | ${m.company_name()}`} />
-	<meta property="og:description" content={m.story_content().substring(0, 160)} />
+	<title>{m.about_meta_title()}</title>
+	<meta name="description" content={m.about_meta_description()} />
+	<meta property="og:title" content={m.about_meta_title()} />
+	<meta property="og:description" content={m.about_meta_description()} />
 </svelte:head>
 
-<PageHeader
-	breadcrumb={m.breadcrumb_about()}
-	title={m.about_page_title()}
-/>
+<PageHeader breadcrumb={m.breadcrumb_about()} title={m.about_page_title()} />
 
 <CompanyStory />
 <Timeline />

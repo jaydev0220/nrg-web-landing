@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import * as m from '$lib/paraglide/messages';
 	import { page } from '$app/state';
 
@@ -22,12 +23,14 @@
 		}
 	}
 
+	const initialInquiryType = browser ? page.url.searchParams.get('type') : null;
+
 	let form = $state({
 		name: '',
 		company: '',
 		email: '',
 		phone: '',
-		inquiryType: mapInquiryType(page.url.searchParams.get('type')),
+		inquiryType: mapInquiryType(initialInquiryType),
 		productInterest: '',
 		message: '',
 		attachment: null as File | null

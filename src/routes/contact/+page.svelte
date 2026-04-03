@@ -6,16 +6,13 @@
 </script>
 
 <svelte:head>
-	<title>{m.contact_page_title()} | {m.company_name()}</title>
-	<meta name="description" content={`${m.contact_info_heading()} - ${m.company_name()}`} />
-	<meta property="og:title" content={`${m.contact_page_title()} | ${m.company_name()}`} />
-	<meta property="og:description" content={`${m.contact_info_heading()} - ${m.company_name()}`} />
+	<title>{m.contact_meta_title()}</title>
+	<meta name="description" content={m.contact_meta_description()} />
+	<meta property="og:title" content={m.contact_meta_title()} />
+	<meta property="og:description" content={m.contact_meta_description()} />
 </svelte:head>
 
-<PageHeader
-	breadcrumb={m.breadcrumb_contact()}
-	title={m.contact_page_title()}
-/>
+<PageHeader breadcrumb={m.breadcrumb_contact()} title={m.contact_page_title()} />
 
 <section class="bg-bg-page py-16 lg:py-20">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

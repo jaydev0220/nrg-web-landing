@@ -37,7 +37,7 @@
 		<!-- Desktop Layout (Side by Side) -->
 		<div class="hidden grid-cols-1 gap-8 lg:grid">
 			{#each partnerships as partnership (partnership.id)}
-				<div class="flex h-37 flex-col justify-between rounded-xl bg-bg-surface p-8">
+				<div class="flex h-41 flex-col justify-between rounded-xl bg-bg-surface p-8">
 					<div class="space-y-3">
 						<h3 class="text-xl font-bold text-text-heading">
 							{partnership.title()}
@@ -68,7 +68,7 @@
 		<!-- Tablet Layout (Stacked) -->
 		<div class="hidden space-y-6 md:block lg:hidden">
 			{#each partnerships as partnership (partnership.id)}
-				<div class="flex h-29 flex-col justify-between rounded-xl bg-bg-surface p-6">
+				<div class="flex h-36 flex-col justify-between rounded-xl bg-bg-surface p-6">
 					<div class="space-y-2">
 						<h3 class="text-lg font-bold text-text-heading">
 							{partnership.title()}
@@ -99,7 +99,7 @@
 		<!-- Mobile Layout (Stacked) -->
 		<div class="space-y-6 md:hidden">
 			{#each partnerships as partnership (partnership.id)}
-				<div class="flex h-35 flex-col justify-between rounded-xl bg-bg-surface p-6">
+				<div class="flex h-36 flex-col justify-between rounded-xl bg-bg-surface p-6">
 					<div class="space-y-2">
 						<h3 class="text-base font-bold text-text-heading">
 							{partnership.title()}
