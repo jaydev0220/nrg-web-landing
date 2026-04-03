@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
+	import { splitLineBreakTags } from '$lib/utils/line-breaks';
 
 	const milestones = [
 		{ id: '1970', year: () => m.milestone_1970(), description: () => m.milestone_1970_desc() },
@@ -42,7 +43,13 @@
 								{milestone.year()}
 							</h3>
 							<p class="leading-relaxed text-text-muted">
-								{milestone.description()}
+								{#each splitLineBreakTags(milestone.description()) as segment, index (index)}
+									{#if segment.type === 'text'}
+										{segment.value}
+									{:else}
+										<br />
+									{/if}
+								{/each}
 							</p>
 						</div>
 					</div>

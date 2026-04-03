@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
+	import { splitLineBreakTags } from '$lib/utils/line-breaks';
 </script>
 
 <section class="flex h-125 min-h-140 items-center bg-bg-accent md:h-114 xl:h-140">
@@ -9,7 +10,13 @@
 				<!-- Main Heading -->
 				<div class="space-y-3">
 					<h1 class="text-5xl leading-tight font-bold text-text-heading">
-						{m.hero_tagline_primary()}
+						{#each splitLineBreakTags(m.company_tagline()) as segment, index (index)}
+							{#if segment.type === 'text'}
+								{segment.value}
+							{:else}
+								<br />
+							{/if}
+						{/each}
 					</h1>
 					<p class="text-xl leading-relaxed text-text-muted">
 						{m.hero_tagline_secondary()}
