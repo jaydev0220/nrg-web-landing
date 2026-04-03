@@ -189,7 +189,7 @@
 */
 
 @media (prefers-color-scheme: dark) {
-	:root {
+	:root:not(.light) {
 		--color-bg-page: var(--color-neutral-900);
 		--color-bg-surface: var(--color-neutral-800);
 		--color-bg-sunken: oklch(10% 0.005 75);
@@ -218,6 +218,35 @@
 	}
 }
 
+/* Manual dark mode override */
+:root.dark {
+	--color-bg-page: var(--color-neutral-900);
+	--color-bg-surface: var(--color-neutral-800);
+	--color-bg-sunken: oklch(10% 0.005 75);
+	--color-bg-accent: var(--color-accent-800);
+
+	--color-border: var(--color-neutral-700);
+	--color-border-strong: var(--color-neutral-600);
+	--color-border-accent: var(--color-accent-700);
+
+	--color-text-heading: var(--color-neutral-50);
+	--color-text-body: var(--color-neutral-200);
+	--color-text-muted: var(--color-neutral-500);
+	--color-text-subtle: var(--color-neutral-600);
+	--color-text-accent: var(--color-accent-300);
+
+	--color-brand: var(--color-accent-400);
+	--color-brand-hover: var(--color-accent-300);
+	--color-brand-active: var(--color-accent-500);
+	--color-brand-subtle: var(--color-accent-800);
+	--color-brand-muted: var(--color-accent-700);
+
+	--shadow-xs: 0 1px 2px oklch(0% 0 0 / 0.3);
+	--shadow-sm: 0 2px 6px oklch(0% 0 0 / 0.35);
+	--shadow-md: 0 4px 16px oklch(0% 0 0 / 0.4);
+	--shadow-lg: 0 8px 32px oklch(0% 0 0 / 0.45);
+}
+
 /* ── Base layer ──────────────────────────────────── */
 @layer base {
 	html {
@@ -233,9 +262,13 @@
 	}
 
 	@media (prefers-color-scheme: dark) {
-		html {
+		html:not(.light) {
 			color-scheme: dark;
 		}
+	}
+
+	html.dark {
+		color-scheme: dark;
 	}
 
 	/* Heading defaults */

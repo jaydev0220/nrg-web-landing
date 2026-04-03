@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import { Menu } from '@lucide/svelte';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
+	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
 	import * as m from '$lib/paraglide/messages';
 
 	let mobileMenuOpen = $state(false);
@@ -33,11 +36,13 @@
 			<!-- Logo -->
 			<div class="shrink-0">
 				<a href={resolve('/', {})} class="flex items-center" onclick={closeMobileMenu}>
-					<div class="flex h-10 w-27 items-center justify-center rounded-md bg-border">
-						<span class="text-sm font-bold text-brand">
-							{m.company_name()}
-						</span>
-					</div>
+					<img
+						src={cdnUrl(CDN_ASSETS.logo)}
+						alt={m.company_name()}
+						class="h-10 w-auto"
+						width="108"
+						height="40"
+					/>
 				</a>
 			</div>
 
@@ -59,6 +64,7 @@
 
 			<!-- Desktop Right Side -->
 			<div class="hidden items-center space-x-4 lg:flex">
+				<ThemeSwitcher />
 				<LanguageSwitcher />
 				<a
 					href="https://example.com"
@@ -76,6 +82,7 @@
 
 			<!-- Mobile Right Side -->
 			<div class="flex items-center space-x-3 lg:hidden">
+				<ThemeSwitcher />
 				<LanguageSwitcher />
 				<button
 					onclick={toggleMobileMenu}
@@ -86,20 +93,7 @@
 					aria-expanded={mobileMenuOpen}
 					aria-label="Toggle mobile menu"
 				>
-					<svg
-						class="h-6 w-6"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-						aria-hidden="true"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M4 6h16M4 12h16M4 18h16"
-						/>
-					</svg>
+					<Menu class="h-6 w-6" aria-hidden="true" />
 				</button>
 			</div>
 		</div>
