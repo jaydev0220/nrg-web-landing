@@ -76,6 +76,19 @@ Styling & UI/UX:
 | format      | Format code with Prettier        |
 | gen         | Generate Cloudflare Worker types |
 
+## Development Workflow
+
+After modifying code, execute the following scripts to ensure code quality:
+
+```bash
+pnpm format
+pnpm lint
+pnpm check
+pnpm build
+```
+
+If all 4 scripts pass without throwing errors, you can commit changes.
+
 ---
 
 # lean-ctx — Context Engineering Layer
