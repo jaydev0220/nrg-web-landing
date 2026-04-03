@@ -225,10 +225,17 @@
 		font-size: 16px;
 		color: var(--color-text-body);
 		background-color: var(--color-bg-page);
+		color-scheme: light;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		/* Improve TC rendering */
 		text-rendering: optimizeLegibility;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		html {
+			color-scheme: dark;
+		}
 	}
 
 	/* Heading defaults */
@@ -239,6 +246,7 @@
 		line-height: var(--leading-tight);
 		font-weight: var(--font-weight-bold);
 		letter-spacing: var(--tracking-tc);
+		text-wrap: balance;
 	}
 
 	h4,
@@ -267,5 +275,21 @@
 	::after,
 	::before {
 		border-color: var(--color-border);
+	}
+
+	a,
+	button,
+	input,
+	select,
+	textarea {
+		touch-action: manipulation;
+	}
+
+	* {
+		-webkit-tap-highlight-color: rgb(13 122 140 / 0.2);
+	}
+
+	:target {
+		scroll-margin-top: 6rem;
 	}
 }

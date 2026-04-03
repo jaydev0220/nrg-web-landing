@@ -1,0 +1,62 @@
+<script lang="ts">
+	import * as m from '$lib/paraglide/messages';
+</script>
+
+<section class="bg-bg-page py-16 lg:py-20">
+	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<!-- Section Heading -->
+		<div class="mb-8 lg:mb-12">
+			<h2 class="mb-4 text-3xl font-bold text-text-heading md:text-3xl lg:text-4xl">
+				{m.story_heading()}
+			</h2>
+			<div class="border-t border-border"></div>
+		</div>
+
+		<!-- Desktop Layout -->
+		<div class="hidden grid-cols-2 items-start gap-16 lg:grid">
+			<!-- Left: Photo -->
+			<div>
+				<div
+					class="flex h-49 w-120 items-center justify-center rounded-xl bg-border text-text-muted"
+				>
+					[Company / Factory Photo]
+				</div>
+			</div>
+
+			<!-- Right: Content -->
+			<div class="space-y-6">
+				<p class="text-sm leading-relaxed text-text-body">
+					{m.story_content()}
+				</p>
+			</div>
+		</div>
+
+		<!-- Tablet Layout -->
+		<div class="hidden space-y-8 md:block lg:hidden">
+			<div
+				class="flex h-56 w-full items-center justify-center rounded-lg bg-border text-text-muted"
+			>
+				[Company / Factory Photo]
+			</div>
+			<div class="space-y-4">
+				<p class="text-xs leading-relaxed text-text-body">
+					{m.story_content()}
+				</p>
+			</div>
+		</div>
+
+		<!-- Mobile Layout -->
+		<div class="space-y-6 md:hidden">
+			<div
+				class="flex h-48 w-full items-center justify-center rounded-lg bg-border text-text-muted"
+			>
+				[Company / Factory Photo]
+			</div>
+			<div class="space-y-4">
+				<p class="text-xs leading-relaxed text-text-body">
+					{m.story_content()}
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
