@@ -63,6 +63,19 @@ Styling & UI/UX:
 - `tailwind-best-practices`
 - `web-design-guidelines`
 
+## Available Scripts
+
+| Script      | Description                      |
+| ----------- | -------------------------------- |
+| dev         | Start local development server   |
+| build       | Build for production             |
+| preview     | Preview production build locally |
+| check       | Run type check                   |
+| check:watch | Run type check in watch mode     |
+| lint        | Run Prettier and ESLint check    |
+| format      | Format code with Prettier        |
+| gen         | Generate Cloudflare Worker types |
+
 ---
 
 # lean-ctx — Context Engineering Layer
