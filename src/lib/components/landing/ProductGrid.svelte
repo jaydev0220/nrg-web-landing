@@ -1,12 +1,38 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
+	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
 
 	const categories = [
-		{ id: 'beakers', name: () => m.category_beakers_flasks(), gridArea: 'beakers' },
-		{ id: 'pipettes', name: () => m.category_pipettes(), gridArea: 'pipettes' },
-		{ id: 'tubes', name: () => m.category_test_tubes(), gridArea: 'tubes' },
-		{ id: 'funnels', name: () => m.category_funnels(), gridArea: 'funnels' },
-		{ id: 'custom', name: () => m.category_custom(), gridArea: 'custom' }
+		{
+			id: 'beakers',
+			name: () => m.category_beakers_flasks(),
+			gridArea: 'beakers',
+			image: CDN_ASSETS.productBeakers
+		},
+		{
+			id: 'pipettes',
+			name: () => m.category_pipettes(),
+			gridArea: 'pipettes',
+			image: CDN_ASSETS.productPipettes
+		},
+		{
+			id: 'tubes',
+			name: () => m.category_test_tubes(),
+			gridArea: 'tubes',
+			image: CDN_ASSETS.productTubes
+		},
+		{
+			id: 'funnels',
+			name: () => m.category_funnels(),
+			gridArea: 'funnels',
+			image: CDN_ASSETS.productFunnels
+		},
+		{
+			id: 'custom',
+			name: () => m.category_custom(),
+			gridArea: 'custom',
+			image: CDN_ASSETS.productCustom
+		}
 	];
 </script>
 
@@ -26,49 +52,89 @@
 		>
 			<!-- Large cell: Beakers & Flasks -->
 			<div
-				class="flex items-end rounded-2xl bg-border p-6 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex items-end overflow-hidden rounded-2xl bg-border transition-colors duration-200 hover:bg-border-strong"
 				style="grid-area: beakers;"
 			>
-				<h3 class="text-sm font-bold text-text-body">
-					{categories[0].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[0].image)}
+					alt={categories[0].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-6">
+					<h3 class="text-sm font-bold text-white">
+						{categories[0].name()}
+					</h3>
+				</div>
 			</div>
 
 			<!-- Small cells -->
 			<div
-				class="flex items-end rounded-2xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex items-end overflow-hidden rounded-2xl bg-border transition-colors duration-200 hover:bg-border-strong"
 				style="grid-area: pipettes;"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[1].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[1].image)}
+					alt={categories[1].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[1].name()}
+					</h3>
+				</div>
 			</div>
 
 			<div
-				class="flex items-end rounded-2xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex items-end overflow-hidden rounded-2xl bg-border transition-colors duration-200 hover:bg-border-strong"
 				style="grid-area: tubes;"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[2].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[2].image)}
+					alt={categories[2].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[2].name()}
+					</h3>
+				</div>
 			</div>
 
 			<div
-				class="flex items-end rounded-2xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex items-end overflow-hidden rounded-2xl bg-border transition-colors duration-200 hover:bg-border-strong"
 				style="grid-area: funnels;"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[3].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[3].image)}
+					alt={categories[3].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[3].name()}
+					</h3>
+				</div>
 			</div>
 
 			<div
-				class="flex items-end rounded-2xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex items-end overflow-hidden rounded-2xl bg-border transition-colors duration-200 hover:bg-border-strong"
 				style="grid-area: custom;"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[4].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[4].image)}
+					alt={categories[4].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[4].name()}
+					</h3>
+				</div>
 			</div>
 		</div>
 
@@ -76,43 +142,83 @@
 		<div class="hidden h-auto grid-cols-2 gap-4 md:grid lg:hidden">
 			<!-- Row 1: Beakers & Flasks | Pipettes -->
 			<div
-				class="flex h-45 items-end rounded-xl bg-border p-6 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
-				<h3 class="text-sm font-bold text-text-body">
-					{categories[0].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[0].image)}
+					alt={categories[0].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-6">
+					<h3 class="text-sm font-bold text-white">
+						{categories[0].name()}
+					</h3>
+				</div>
 			</div>
 			<div
-				class="flex h-45 items-end rounded-xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[1].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[1].image)}
+					alt={categories[1].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[1].name()}
+					</h3>
+				</div>
 			</div>
 
 			<!-- Row 2: Test Tubes | Funnels -->
 			<div
-				class="flex h-45 items-end rounded-xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[2].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[2].image)}
+					alt={categories[2].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[2].name()}
+					</h3>
+				</div>
 			</div>
 			<div
-				class="flex h-45 items-end rounded-xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[3].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[3].image)}
+					alt={categories[3].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[3].name()}
+					</h3>
+				</div>
 			</div>
 
 			<!-- Row 3: Custom (full width) -->
 			<div
-				class="col-span-2 flex h-45 items-end rounded-xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong"
+				class="relative col-span-2 flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
-				<h3 class="text-xs font-bold text-text-body">
-					{categories[4].name()}
-				</h3>
+				<img
+					src={cdnUrl(categories[4].image)}
+					alt={categories[4].name()}
+					class="absolute inset-0 h-full w-full object-cover"
+					loading="lazy"
+				/>
+				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<h3 class="text-xs font-bold text-white">
+						{categories[4].name()}
+					</h3>
+				</div>
 			</div>
 		</div>
 
@@ -121,13 +227,21 @@
 			{#each categories as category, index (category.id)}
 				<div
 					class="
-						flex items-end rounded-xl bg-border p-4 transition-colors duration-200 hover:bg-border-strong
+						relative flex items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong
 						{index === 0 ? 'h-32' : 'h-29'}
 					"
 				>
-					<h3 class="text-xs font-bold text-text-body">
-						{category.name()}
-					</h3>
+					<img
+						src={cdnUrl(category.image)}
+						alt={category.name()}
+						class="absolute inset-0 h-full w-full object-cover"
+						loading="lazy"
+					/>
+					<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+						<h3 class="text-xs font-bold text-white">
+							{category.name()}
+						</h3>
+					</div>
 				</div>
 			{/each}
 		</div>

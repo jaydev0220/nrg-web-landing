@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { getLocale, setLocale } from '$lib/paraglide/runtime';
+	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
 	import * as m from '$lib/paraglide/messages';
 
 	const currentYear = new Date().getFullYear();
@@ -33,16 +34,13 @@
 				<!-- Left: Logo + Description -->
 				<div class="flex flex-col space-y-3">
 					<div class="flex items-center">
-						<div
-							class="
-								flex h-10 w-27 items-center
-								justify-center rounded-md bg-accent-600
-							"
-						>
-							<span class="text-sm font-bold text-text-on-accent">
-								{m.company_name()}
-							</span>
-						</div>
+						<img
+							src={cdnUrl(CDN_ASSETS.logoLight)}
+							alt={m.company_name()}
+							class="h-10 w-auto"
+							width="108"
+							height="40"
+						/>
 					</div>
 					<p class="max-w-xs text-sm text-accent-200">
 						{m.company_description()}
@@ -112,11 +110,13 @@
 			<!-- Logo + Description -->
 			<div class="space-y-3">
 				<div class="flex items-center">
-					<div class="flex h-10 w-27 items-center justify-center rounded-md bg-accent-600">
-						<span class="text-sm font-bold text-text-on-accent">
-							{m.company_name()}
-						</span>
-					</div>
+					<img
+						src={cdnUrl(CDN_ASSETS.logoLight)}
+						alt={m.company_name()}
+						class="h-10 w-auto"
+						width="108"
+						height="40"
+					/>
 				</div>
 				<p class="text-sm text-accent-200">
 					{m.company_description()}
