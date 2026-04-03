@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { siFacebook, siLine } from 'simple-icons';
 	import { Mail, MapPin, Phone, Printer } from '@lucide/svelte';
 	import * as m from '$lib/paraglide/messages';
 	import { cdnUrl, CDN_ASSETS } from '$lib/utils/cdn';
+	import SocialIcon from '$lib/components/SocialIcon.svelte';
 
 	const contactItems = [
 		{
@@ -47,9 +49,10 @@
 		{
 			id: 'facebook',
 			label: () => m.footer_social_facebook(),
-			href: 'https://www.facebook.com/profile.php?id=100057611824911'
+			href: 'https://www.facebook.com/profile.php?id=100057611824911',
+			icon: siFacebook
 		},
-		{ id: 'line', label: () => m.footer_social_line(), href: 'https://example.com' }
+		{ id: 'line', label: () => m.footer_social_line(), href: 'https://example.com', icon: siLine }
 	];
 </script>
 
@@ -107,13 +110,14 @@
 					target="_blank"
 					rel="external noopener noreferrer"
 					class="
-						inline-flex h-9 w-22 items-center justify-center rounded-md border
+						inline-flex h-9 min-w-22 items-center justify-center gap-1 rounded-md border
 						border-border bg-bg-sunken px-3 py-2 text-xs font-medium text-text-body
 						transition-colors duration-200 hover:-translate-y-0.5 hover:bg-bg-accent
 						focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none
 					"
 					aria-label={social.label()}
 				>
+					<SocialIcon icon={social.icon} classList="h-4 w-auto" />
 					{social.label()}
 				</a>
 			{/each}
@@ -165,13 +169,14 @@
 					target="_blank"
 					rel="external noopener noreferrer"
 					class="
-						inline-flex h-8 w-22 items-center justify-center rounded border
+						inline-flex h-8 min-w-22 items-center justify-center gap-1 rounded border
 						border-border bg-bg-surface px-3 py-1.5 text-xs font-medium text-text-body
 						transition-colors duration-200 hover:-translate-y-0.5 hover:bg-bg-sunken
 						focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none
 					"
 					aria-label={social.label()}
 				>
+					<SocialIcon icon={social.icon} classList="h-4 w-auto" />
 					{social.label()}
 				</a>
 			{/each}
@@ -225,13 +230,14 @@
 					target="_blank"
 					rel="external noopener noreferrer"
 					class="
-						inline-flex h-8 w-22 items-center justify-center rounded border
+						inline-flex h-8 min-w-22 items-center justify-center gap-1 rounded border
 						border-border bg-bg-sunken px-3 py-1.5 text-xs font-medium text-text-body
 						transition-colors duration-200 hover:-translate-y-0.5 hover:bg-bg-accent
 						focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none
 					"
 					aria-label={social.label()}
 				>
+					<SocialIcon icon={social.icon} classList="h-4 w-auto" />
 					{social.label()}
 				</a>
 			{/each}
