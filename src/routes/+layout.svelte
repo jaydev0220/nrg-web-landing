@@ -3,6 +3,7 @@
 	import * as m from '$lib/paraglide/messages';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
 	import './layout.css';
 
 	let { children } = $props();
@@ -30,6 +31,7 @@
 </script>
 
 <svelte:head>
+	<link rel="icon" href={cdnUrl(CDN_ASSETS.favicon)} type="image/x-icon" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f8f7f5" />

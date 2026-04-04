@@ -4,6 +4,7 @@ export const CDN_ASSETS = {
 	// Branding
 	logoDark: '/logo-dark.svg',
 	logoLight: '/logo-light.svg',
+	favicon: '/favicon.ico',
 
 	// About page
 	companyStoryPhoto: '/landing/company-story-photo.webp',
