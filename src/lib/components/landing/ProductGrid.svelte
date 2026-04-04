@@ -10,12 +10,6 @@
 			image: CDN_ASSETS.productBeakers
 		},
 		{
-			id: 'pipettes',
-			name: () => m.category_pipettes(),
-			gridArea: 'pipettes',
-			image: CDN_ASSETS.productPipettes
-		},
-		{
 			id: 'tubes',
 			name: () => m.category_test_tubes(),
 			gridArea: 'tubes',
@@ -28,10 +22,16 @@
 			image: CDN_ASSETS.productFunnels
 		},
 		{
-			id: 'custom',
-			name: () => m.category_custom(),
-			gridArea: 'custom',
-			image: CDN_ASSETS.productCustom
+			id: 'condensers',
+			name: () => m.category_condensers(),
+			gridArea: 'condensers',
+			image: CDN_ASSETS.productCondensers
+		},
+		{
+			id: 'hydrometers',
+			name: () => m.category_hydrometers(),
+			gridArea: 'hydrometers',
+			image: CDN_ASSETS.productHydrometers
 		}
 	];
 </script>
@@ -41,7 +41,7 @@
 		<!-- Section Heading -->
 		<div class="mb-8 lg:mb-16">
 			<h2 class="mb-2 text-3xl font-bold text-text-heading md:text-3xl lg:text-4xl">
-				{m.product_series_heading()} / {m.product_categories_heading()}
+				{m.product_series_heading()}
 			</h2>
 		</div>
 
@@ -61,7 +61,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-6">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-6">
 					<h3 class="text-sm font-bold text-white">
 						{categories[0].name()}
 					</h3>
@@ -79,7 +79,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[1].name()}
 					</h3>
@@ -96,7 +96,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[2].name()}
 					</h3>
@@ -113,7 +113,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[3].name()}
 					</h3>
@@ -130,7 +130,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[4].name()}
 					</h3>
@@ -150,7 +150,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-6">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-6">
 					<h3 class="text-sm font-bold text-white">
 						{categories[0].name()}
 					</h3>
@@ -165,7 +165,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[1].name()}
 					</h3>
@@ -182,7 +182,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[2].name()}
 					</h3>
@@ -197,7 +197,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[3].name()}
 					</h3>
@@ -214,7 +214,7 @@
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
-				<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
 						{categories[4].name()}
 					</h3>
@@ -237,7 +237,7 @@
 						class="absolute inset-0 h-full w-full object-cover"
 						loading="lazy"
 					/>
-					<div class="relative z-10 w-full bg-gradient-to-t from-neutral-900/70 to-transparent p-4">
+					<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 						<h3 class="text-xs font-bold text-white">
 							{category.name()}
 						</h3>
