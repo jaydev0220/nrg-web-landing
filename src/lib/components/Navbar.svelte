@@ -37,7 +37,7 @@
 			<div class="shrink-0">
 				<a href={resolve('/', {})} class="flex items-center" onclick={closeMobileMenu}>
 					<img
-						src={cdnUrl(CDN_ASSETS.logo)}
+						src={cdnUrl(CDN_ASSETS.logoLight)}
 						alt={m.company_name()}
 						class="h-10 w-auto"
 						width="108"

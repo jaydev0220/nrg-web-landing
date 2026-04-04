@@ -1,9 +1,9 @@
-export const CDN_BASE_URL = 'https://cdn.example.com';
+export const CDN_BASE_URL = 'https://cdn.nrglabware.com';
 
 export const CDN_ASSETS = {
 	// Branding
-	logo: '/landing/logo.webp',
-	logoLight: '/landing/logo-light.webp',
+	logoDark: '/logo-dark.svg',
+	logoLight: '/logo-light.svg',
 
 	// About page
 	companyStoryPhoto: '/landing/company-story-photo.webp',
@@ -13,11 +13,11 @@ export const CDN_ASSETS = {
 	contactLineQr: '/landing/contact-line-qr.webp',
 
 	// Product categories
-	productBeakers: '/landing/product-beakers.webp',
-	productPipettes: '/landing/product-pipettes.webp',
-	productTubes: '/landing/product-tubes.webp',
-	productFunnels: '/landing/product-funnels.webp',
-	productCustom: '/landing/product-custom.webp'
+	productBeakers: '/landing/products-beakers.webp',
+	productCondensers: '/landing/products-condensers.webp',
+	productTubes: '/landing/products-tubes.webp',
+	productFunnels: '/landing/products-funnels.webp',
+	productHydrometers: '/landing/products-hydrometers.webp'
 } as const;
 
 export function cdnUrl(path: string): string {
