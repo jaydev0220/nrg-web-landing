@@ -1,32 +1,6 @@
 <script lang="ts">
 	import { Sun, Moon } from '@lucide/svelte';
-	import { onMount } from 'svelte';
-
-	type Theme = 'light' | 'dark';
-
-	let theme = $state<Theme>('light');
-
-	onMount(() => {
-		applyTheme(theme);
-	});
-
-	function applyTheme(value: Theme) {
-		const root = document.documentElement;
-
-		if (value === 'dark') {
-			root.classList.add('dark');
-			root.classList.remove('light');
-		} else {
-			root.classList.add('light');
-			root.classList.remove('dark');
-		}
-	}
-
-	function toggleTheme() {
-		const next: Theme = theme === 'light' ? 'dark' : 'light';
-		theme = next;
-		applyTheme(next);
-	}
+	import { theme } from '$lib/state/theme.svelte';
 </script>
 
 <button
@@ -36,11 +10,11 @@
 		duration-200 hover:-translate-y-0.5 hover:border-border-accent hover:bg-bg-accent
 		focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none
 	"
-	onclick={toggleTheme}
+	onclick={() => theme.toggle()}
 	aria-label="Toggle theme"
-	title={theme === 'light' ? 'Light theme' : 'Dark theme'}
+	title={theme.current === 'light' ? 'Light theme' : 'Dark theme'}
 >
-	{#if theme === 'dark'}
+	{#if theme.current === 'dark'}
 		<Moon class="h-4 w-4" aria-hidden="true" />
 	{:else}
 		<Sun class="h-4 w-4" aria-hidden="true" />
