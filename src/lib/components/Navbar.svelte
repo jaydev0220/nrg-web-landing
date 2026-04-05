@@ -2,10 +2,10 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { Menu } from '@lucide/svelte';
+	import Logo from '$lib/components/Logo.svelte';
+	import { navLinks, shopCta } from '$lib/data';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
-	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
-	import * as m from '$lib/paraglide/messages';
 
 	let mobileMenuOpen = $state(false);
 
@@ -22,12 +22,6 @@
 		if (path === '/') return page.url.pathname === '/';
 		return page.url.pathname.startsWith(path);
 	}
-
-	const navLinks = [
-		{ id: 'home', href: '/', label: () => m.nav_home() },
-		{ id: 'about', href: '/about', label: () => m.nav_about() },
-		{ id: 'contact', href: '/contact', label: () => m.nav_contact() }
-	] as const;
 </script>
 
 <nav class="sticky top-0 z-40 h-18 w-full border-b border-border bg-bg-page/95 backdrop-blur-sm">
@@ -36,13 +30,7 @@
 			<!-- Logo -->
 			<div class="shrink-0">
 				<a href={resolve('/', {})} class="flex items-center" onclick={closeMobileMenu}>
-					<img
-						src={cdnUrl(CDN_ASSETS.logoLight)}
-						alt={m.company_name()}
-						class="h-10 w-auto"
-						width="108"
-						height="40"
-					/>
+					<Logo class="h-10 w-auto" width={108} height={40} />
 				</a>
 			</div>
 
@@ -67,16 +55,16 @@
 				<ThemeSwitcher />
 				<LanguageSwitcher />
 				<a
-					href="https://example.com"
+					href={shopCta.href}
 					target="_blank"
-					rel="noopener noreferrer"
+					rel="external noopener noreferrer"
 					class="
 						inline-flex h-10 w-37 items-center justify-center rounded-md bg-brand px-6 py-2
 						text-sm font-medium text-text-on-accent transition-colors duration-200 hover:-translate-y-0.5 hover:bg-brand-hover
 						focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none
 					"
 				>
-					{m.cta_visit_shop()}
+					{shopCta.label()}
 				</a>
 			</div>
 
@@ -124,9 +112,9 @@
 				<!-- Mobile CTA Button -->
 				<div class="mt-4 mb-2 border-t border-border pt-4">
 					<a
-						href="https://example.com"
+						href={shopCta.href}
 						target="_blank"
-						rel="noopener noreferrer"
+						rel="external noopener noreferrer"
 						onclick={closeMobileMenu}
 						class="
 							block w-full rounded-md bg-brand px-4 py-3 text-center text-sm font-medium text-text-on-accent
@@ -134,7 +122,7 @@
 							focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:outline-none
 						"
 					>
-						{m.cta_visit_shop()}
+						{shopCta.label()}
 					</a>
 				</div>
 			</div>

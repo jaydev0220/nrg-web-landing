@@ -1,26 +1,12 @@
 <script lang="ts">
-	import { siFacebook, siLine } from 'simple-icons';
 	import { resolve } from '$app/paths';
 	import { getLocale, setLocale } from '$lib/paraglide/runtime';
-	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
 	import * as m from '$lib/paraglide/messages';
+	import Logo from '$lib/components/Logo.svelte';
+	import { socialLinks, navLinks } from '$lib/data';
 	import SocialIcon from '$lib/components/SocialIcon.svelte';
 
 	const currentYear = new Date().getFullYear();
-	const navLinks = [
-		{ id: 'home', href: '/', label: () => m.nav_home() },
-		{ id: 'about', href: '/about', label: () => m.nav_about() },
-		{ id: 'contact', href: '/contact', label: () => m.nav_contact() }
-	] as const;
-	const socialLinks = [
-		{
-			id: 'facebook',
-			href: 'https://example.com',
-			label: () => m.footer_social_facebook(),
-			icon: siFacebook
-		},
-		{ id: 'line', href: 'https://example.com', label: () => m.footer_social_line(), icon: siLine }
-	];
 
 	function toggleLanguage() {
 		const newLang = getLocale() === 'zh-tw' ? 'en' : 'zh-tw';
@@ -36,13 +22,7 @@
 				<!-- Left: Logo + Description -->
 				<div class="flex flex-col space-y-3">
 					<div class="flex items-center">
-						<img
-							src={cdnUrl(CDN_ASSETS.logoLight)}
-							alt={m.company_name()}
-							class="h-10 w-auto"
-							width="108"
-							height="40"
-						/>
+						<Logo class="h-10 w-auto" width={108} height={40} />
 					</div>
 					<p class="max-w-xs text-sm text-accent-200">
 						{m.company_description()}
@@ -113,13 +93,7 @@
 			<!-- Logo + Description -->
 			<div class="space-y-3">
 				<div class="flex items-center">
-					<img
-						src={cdnUrl(CDN_ASSETS.logoLight)}
-						alt={m.company_name()}
-						class="h-10 w-auto"
-						width="108"
-						height="40"
-					/>
+					<Logo class="h-10 w-auto" width={108} height={40} />
 				</div>
 				<p class="text-sm text-accent-200">
 					{m.company_description()}
@@ -128,7 +102,7 @@
 
 			<!-- Navigation Links -->
 			<div class="space-y-4">
-				{#each navLinks.slice(0, 3) as link (link.id)}
+				{#each navLinks as link (link.id)}
 					<a
 						href={resolve(link.href, {})}
 						class="
