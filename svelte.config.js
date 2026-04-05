@@ -13,7 +13,21 @@ const config = {
 			return isExternalLibrary ? undefined : true;
 		}
 	},
-	kit: { adapter: adapter() }
+	kit: {
+		adapter: adapter(),
+		prerender: {
+			handleHttpError: ({ path, status, message }) => {
+				if (
+					status === 404 &&
+					(path.startsWith('/landing/') || path.startsWith('/logo-') || path === '/favicon.ico')
+				) {
+					return;
+				}
+
+				throw new Error(message);
+			}
+		}
+	}
 };
 
 export default config;
