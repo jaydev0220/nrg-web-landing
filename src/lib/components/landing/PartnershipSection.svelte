@@ -1,28 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import * as m from '$lib/paraglide/messages';
-
-	type PartnershipCard = {
-		id: 'b2b' | 'retail';
-		title: () => string;
-		description: () => string;
-		cta: () => string;
-		href: string;
-		type: 'b2b' | 'retail';
-		primary: boolean;
-	};
-
-	const partnerships: PartnershipCard[] = [
-		{
-			id: 'b2b',
-			title: () => m.partnership_b2b_title(),
-			description: () => m.partnership_b2b_description(),
-			cta: () => m.cta_learn_more(),
-			href: '/contact',
-			type: 'b2b',
-			primary: true
-		}
-	];
+	import { partnerships } from '$lib/data';
 </script>
 
 <section class="bg-bg-accent py-16 lg:py-20">

@@ -1,12 +1,7 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
-	import { cdnUrl, CDN_ASSETS } from '$lib/utils/cdn';
+	import { storyImage } from '$lib/data';
 	import { splitLineBreakTags } from '$lib/utils/line-breaks';
-
-	const storyImage = {
-		src: cdnUrl(CDN_ASSETS.companyStoryPhoto),
-		alt: 'Company / Factory Photo'
-	};
 
 	const storySegments = () => splitLineBreakTags(m.story_content());
 </script>

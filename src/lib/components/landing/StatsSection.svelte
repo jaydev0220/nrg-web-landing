@@ -1,23 +1,5 @@
 <script lang="ts">
-	import * as m from '$lib/paraglide/messages';
-
-	const stats = [
-		{
-			id: 'years',
-			number: () => m.stats_years(),
-			description: () => m.stats_years_desc()
-		},
-		{
-			id: 'skus',
-			number: () => m.stats_skus(),
-			description: () => m.stats_skus_desc()
-		},
-		{
-			id: 'iso',
-			number: () => m.stats_iso(),
-			description: () => m.stats_iso_desc()
-		}
-	];
+	import { stats } from '$lib/data';
 </script>
 
 <section class="bg-accent-700 py-10 md:py-12">

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
+	import { shopCta } from '$lib/data';
 	import { splitLineBreakTags } from '$lib/utils/line-breaks';
 </script>
 
@@ -26,9 +27,9 @@
 				<!-- CTA Button -->
 				<div class="space-y-2">
 					<a
-						href="https://example.com"
+						href={shopCta.href}
 						target="_blank"
-						rel="noopener noreferrer"
+						rel="external noopener noreferrer"
 						class="
 							inline-flex h-12 w-full items-center justify-center rounded-md bg-brand px-8 py-3
 							font-medium text-text-on-accent transition-colors duration-200
@@ -36,7 +37,7 @@
 							focus-visible:ring-offset-2 focus-visible:outline-none md:h-12 md:w-45 xl:h-13 xl:w-50
 						"
 					>
-						{m.cta_visit_shop()}
+						{shopCta.label()}
 					</a>
 				</div>
 			</div>

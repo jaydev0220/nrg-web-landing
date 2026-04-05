@@ -1,39 +1,6 @@
 <script lang="ts">
 	import * as m from '$lib/paraglide/messages';
-	import { CDN_ASSETS, cdnUrl } from '$lib/utils/cdn';
-
-	const categories = [
-		{
-			id: 'beakers',
-			name: () => m.category_beakers_flasks(),
-			gridArea: 'beakers',
-			image: CDN_ASSETS.productBeakers
-		},
-		{
-			id: 'tubes',
-			name: () => m.category_test_tubes(),
-			gridArea: 'tubes',
-			image: CDN_ASSETS.productTubes
-		},
-		{
-			id: 'funnels',
-			name: () => m.category_funnels(),
-			gridArea: 'funnels',
-			image: CDN_ASSETS.productFunnels
-		},
-		{
-			id: 'condensers',
-			name: () => m.category_condensers(),
-			gridArea: 'condensers',
-			image: CDN_ASSETS.productCondensers
-		},
-		{
-			id: 'hydrometers',
-			name: () => m.category_hydrometers(),
-			gridArea: 'hydrometers',
-			image: CDN_ASSETS.productHydrometers
-		}
-	];
+	import { productCategories } from '$lib/data';
 </script>
 
 <section class="bg-bg-page py-16 lg:py-20">
@@ -56,14 +23,14 @@
 				style="grid-area: beakers;"
 			>
 				<img
-					src={cdnUrl(categories[0].image)}
-					alt={categories[0].name()}
+					src={productCategories[0].image}
+					alt={productCategories[0].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-6">
 					<h3 class="text-sm font-bold text-white">
-						{categories[0].name()}
+						{productCategories[0].name()}
 					</h3>
 				</div>
 			</div>
@@ -74,14 +41,14 @@
 				style="grid-area: pipettes;"
 			>
 				<img
-					src={cdnUrl(categories[1].image)}
-					alt={categories[1].name()}
+					src={productCategories[1].image}
+					alt={productCategories[1].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[1].name()}
+						{productCategories[1].name()}
 					</h3>
 				</div>
 			</div>
@@ -91,14 +58,14 @@
 				style="grid-area: tubes;"
 			>
 				<img
-					src={cdnUrl(categories[2].image)}
-					alt={categories[2].name()}
+					src={productCategories[2].image}
+					alt={productCategories[2].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[2].name()}
+						{productCategories[2].name()}
 					</h3>
 				</div>
 			</div>
@@ -108,14 +75,14 @@
 				style="grid-area: funnels;"
 			>
 				<img
-					src={cdnUrl(categories[3].image)}
-					alt={categories[3].name()}
+					src={productCategories[3].image}
+					alt={productCategories[3].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[3].name()}
+						{productCategories[3].name()}
 					</h3>
 				</div>
 			</div>
@@ -125,14 +92,14 @@
 				style="grid-area: custom;"
 			>
 				<img
-					src={cdnUrl(categories[4].image)}
-					alt={categories[4].name()}
+					src={productCategories[4].image}
+					alt={productCategories[4].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[4].name()}
+						{productCategories[4].name()}
 					</h3>
 				</div>
 			</div>
@@ -145,14 +112,14 @@
 				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
 				<img
-					src={cdnUrl(categories[0].image)}
-					alt={categories[0].name()}
+					src={productCategories[0].image}
+					alt={productCategories[0].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-6">
 					<h3 class="text-sm font-bold text-white">
-						{categories[0].name()}
+						{productCategories[0].name()}
 					</h3>
 				</div>
 			</div>
@@ -160,14 +127,14 @@
 				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
 				<img
-					src={cdnUrl(categories[1].image)}
-					alt={categories[1].name()}
+					src={productCategories[1].image}
+					alt={productCategories[1].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[1].name()}
+						{productCategories[1].name()}
 					</h3>
 				</div>
 			</div>
@@ -177,14 +144,14 @@
 				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
 				<img
-					src={cdnUrl(categories[2].image)}
-					alt={categories[2].name()}
+					src={productCategories[2].image}
+					alt={productCategories[2].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[2].name()}
+						{productCategories[2].name()}
 					</h3>
 				</div>
 			</div>
@@ -192,14 +159,14 @@
 				class="relative flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
 				<img
-					src={cdnUrl(categories[3].image)}
-					alt={categories[3].name()}
+					src={productCategories[3].image}
+					alt={productCategories[3].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[3].name()}
+						{productCategories[3].name()}
 					</h3>
 				</div>
 			</div>
@@ -209,14 +176,14 @@
 				class="relative col-span-2 flex h-45 items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong"
 			>
 				<img
-					src={cdnUrl(categories[4].image)}
-					alt={categories[4].name()}
+					src={productCategories[4].image}
+					alt={productCategories[4].name()}
 					class="absolute inset-0 h-full w-full object-cover"
 					loading="lazy"
 				/>
 				<div class="relative z-10 w-full bg-linear-to-t from-neutral-900/70 to-transparent p-4">
 					<h3 class="text-xs font-bold text-white">
-						{categories[4].name()}
+						{productCategories[4].name()}
 					</h3>
 				</div>
 			</div>
@@ -224,7 +191,7 @@
 
 		<!-- Mobile Stack -->
 		<div class="space-y-3 md:hidden">
-			{#each categories as category, index (category.id)}
+			{#each productCategories as category, index (category.id)}
 				<div
 					class="
 						relative flex items-end overflow-hidden rounded-xl bg-border transition-colors duration-200 hover:bg-border-strong
@@ -232,7 +199,7 @@
 					"
 				>
 					<img
-						src={cdnUrl(category.image)}
+						src={category.image}
 						alt={category.name()}
 						class="absolute inset-0 h-full w-full object-cover"
 						loading="lazy"

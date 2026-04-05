@@ -1,21 +1,5 @@
 <script lang="ts">
-	import { Building2, Microscope } from '@lucide/svelte';
-	import * as m from '$lib/paraglide/messages';
-
-	const usps = [
-		{
-			id: 'b2b',
-			icon: Building2,
-			title: () => m.usp_b2b_title(),
-			description: () => m.usp_b2b_description()
-		},
-		{
-			id: 'b2c',
-			icon: Microscope,
-			title: () => m.usp_b2c_title(),
-			description: () => m.usp_b2c_description()
-		}
-	];
+	import { usps } from '$lib/data';
 </script>
 
 <section class="border-y border-border bg-bg-page py-10">
